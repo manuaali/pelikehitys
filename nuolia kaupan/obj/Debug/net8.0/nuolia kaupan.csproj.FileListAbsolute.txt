@@ -1,0 +1,14 @@
+C:\Tiedostot\nuolia kaupan\bin\Debug\net8.0\nuolia kaupan.exe
+C:\Tiedostot\nuolia kaupan\bin\Debug\net8.0\nuolia kaupan.deps.json
+C:\Tiedostot\nuolia kaupan\bin\Debug\net8.0\nuolia kaupan.runtimeconfig.json
+C:\Tiedostot\nuolia kaupan\bin\Debug\net8.0\nuolia kaupan.dll
+C:\Tiedostot\nuolia kaupan\bin\Debug\net8.0\nuolia kaupan.pdb
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\nuolia kaupan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\nuolia kaupan.AssemblyInfoInputs.cache
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\nuolia kaupan.AssemblyInfo.cs
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\nuolia kaupan.csproj.CoreCompileInputs.cache
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\nuolia kaupan.dll
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\refint\nuolia kaupan.dll
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\nuolia kaupan.pdb
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\nuolia kaupan.genruntimeconfig.cache
+C:\Tiedostot\nuolia kaupan\obj\Debug\net8.0\ref\nuolia kaupan.dll
