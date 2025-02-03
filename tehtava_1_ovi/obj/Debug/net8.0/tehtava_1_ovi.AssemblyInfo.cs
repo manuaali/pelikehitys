@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tehtava_1_ovi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d8f5bb7301b086deb7776d3ede65e79de9e6b18")]
 [assembly: System.Reflection.AssemblyProductAttribute("tehtava_1_ovi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tehtava_1_ovi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

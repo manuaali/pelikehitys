@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\s2300859\\source\\repos\\tehtava_1_ovi\\tehtava_1_ovi.csproj": {}
+    "C:\\Pelikehitys\\pelikehitys\\tehtava_1_ovi\\tehtava_1_ovi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\s2300859\\source\\repos\\tehtava_1_ovi\\tehtava_1_ovi.csproj": {
+    "C:\\Pelikehitys\\pelikehitys\\tehtava_1_ovi\\tehtava_1_ovi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\s2300859\\source\\repos\\tehtava_1_ovi\\tehtava_1_ovi.csproj",
+        "projectUniqueName": "C:\\Pelikehitys\\pelikehitys\\tehtava_1_ovi\\tehtava_1_ovi.csproj",
         "projectName": "tehtava_1_ovi",
-        "projectPath": "C:\\Users\\s2300859\\source\\repos\\tehtava_1_ovi\\tehtava_1_ovi.csproj",
+        "projectPath": "C:\\Pelikehitys\\pelikehitys\\tehtava_1_ovi\\tehtava_1_ovi.csproj",
         "packagesPath": "C:\\Users\\s2300859\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\s2300859\\source\\repos\\tehtava_1_ovi\\obj\\",
+        "outputPath": "C:\\Pelikehitys\\pelikehitys\\tehtava_1_ovi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\s2300859\\AppData\\Roaming\\NuGet\\NuGet.Config",
