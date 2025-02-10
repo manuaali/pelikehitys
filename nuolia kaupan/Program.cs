@@ -1,6 +1,5 @@
 ﻿namespace nuolia_kaupan;
 
-
 using System;
 
 enum KarkiTyyppi { Puu = 3, Teräs = 5, Timantti = 50 }
@@ -8,21 +7,36 @@ enum PeraTyyppi { Lehti = 0, Kanansulka = 1, Kotkansulka = 5 }
 
 class Nuoli
 {
-    public KarkiTyyppi Karki { get; set; }
-    public PeraTyyppi Pera { get; set; }
-    public int VarrenPituus { get; set; }
+    private KarkiTyyppi karki;
+    private PeraTyyppi pera;
+    private int varrenPituus;
 
     public Nuoli(KarkiTyyppi karki, PeraTyyppi pera, int varrenPituus)
     {
-        Karki = karki;
-        Pera = pera;
-        VarrenPituus = varrenPituus;
+        this.karki = karki;
+        this.pera = pera;
+        this.varrenPituus = varrenPituus;
+    }
+
+    public KarkiTyyppi GetKarki()
+    {
+        return karki;
+    }
+
+    public PeraTyyppi GetPera()
+    {
+        return pera;
+    }
+
+    public int GetVarrenPituus()
+    {
+        return varrenPituus;
     }
 
     public double PalautaHinta()
     {
-        double varrenHinta = VarrenPituus * 0.05;
-        return (int)Karki + (int)Pera + varrenHinta;
+        double varrenHinta = varrenPituus * 0.05;
+        return (int)karki + (int)pera + varrenHinta;
     }
 }
 
