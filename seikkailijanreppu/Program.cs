@@ -14,6 +14,11 @@ class Tavara
         Paino = paino;
         Tilavuus = tilavuus;
     }
+
+    public override string ToString()
+    {
+        return Nimi;
+    }
 }
 
 class Reppu
@@ -46,13 +51,11 @@ class Reppu
     public int LaskePaino() => tavarat.Sum(t => t.Paino);
     public double LaskeTilavuus() => tavarat.Sum(t => t.Tilavuus);
 
-    public void TulostaTavarat()
+    public override string ToString()
     {
-        Console.WriteLine($"Repussa on tällä hetkellä {tavarat.Count}/{maxTavaroidenMaara} tavaraa, {LaskePaino()}/{maxPaino} painoa, ja {LaskeTilavuus()}/{maxTilavuus} tilavuutta.");
-        foreach (var tavara in tavarat)
-        {
-            Console.WriteLine("- " + tavara.Nimi);
-        }
+        return tavarat.Count > 0
+            ? $"Repussa on seuraavat tavarat: {string.Join(", ", tavarat)}"
+            : "Reppu on tyhjä.";
     }
 }
 
@@ -74,7 +77,7 @@ class Program
 
         while (true)
         {
-            reppu.TulostaTavarat();
+            Console.WriteLine(reppu);
             Console.WriteLine("\nMitä haluat lisätä? (kirjoita tavaran numero tai nimi, tyhjä lopettaa)");
             for (int i = 0; i < kaikkiTavarat.Count; i++)
             {
