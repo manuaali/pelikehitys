@@ -1,53 +1,53 @@
 ﻿using System;
 namespace robotti;
-public abstract class RobottiKasky
+public interface IRobottiKasky
 {
-    public abstract void Suorita(Robotti robotti);
+    void Suorita(Robotti robotti);
 }
 
-public class Kaynnista : RobottiKasky
+public class Käynnistä : IRobottiKasky
 {
-    public override void Suorita(Robotti robotti)
+    public void Suorita(Robotti robotti)
     {
         robotti.OnKaynnissa = true;
     }
 }
 
-public class Sammuta : RobottiKasky
+public class Sammuta : IRobottiKasky
 {
-    public override void Suorita(Robotti robotti)
+    public void Suorita(Robotti robotti)
     {
         robotti.OnKaynnissa = false;
     }
 }
 
-public class YlosKasky : RobottiKasky
+public class Ylös : IRobottiKasky
 {
-    public override void Suorita(Robotti robotti)
+    public void Suorita(Robotti robotti)
     {
         if (robotti.OnKaynnissa) robotti.Y++;
     }
 }
 
-public class AlasKasky : RobottiKasky
+public class Alas : IRobottiKasky
 {
-    public override void Suorita(Robotti robotti)
+    public void Suorita(Robotti robotti)
     {
         if (robotti.OnKaynnissa) robotti.Y--;
     }
 }
 
-public class VasenKasky : RobottiKasky
+public class Vasen : IRobottiKasky
 {
-    public override void Suorita(Robotti robotti)
+    public void Suorita(Robotti robotti)
     {
         if (robotti.OnKaynnissa) robotti.X--;
     }
 }
 
-public class OikeaKasky : RobottiKasky
+public class Oikea : IRobottiKasky
 {
-    public override void Suorita(Robotti robotti)
+    public void Suorita(Robotti robotti)
     {
         if (robotti.OnKaynnissa) robotti.X++;
     }
@@ -58,11 +58,11 @@ public class Robotti
     public int X { get; set; }
     public int Y { get; set; }
     public bool OnKaynnissa { get; set; }
-    public RobottiKasky[] Kaskyt { get; set; } = new RobottiKasky[3];
+    public IRobottiKasky[] Kaskyt { get; set; } = new IRobottiKasky[3];
 
     public void Suorita()
     {
-        foreach (RobottiKasky kasky in Kaskyt)
+        foreach (IRobottiKasky kasky in Kaskyt)
         {
             kasky?.Suorita(this);
             Console.WriteLine($"Robotti: [{X} {Y} {OnKaynnissa}]");
@@ -83,22 +83,22 @@ class Program
             switch (syote)
             {
                 case "käynnistä":
-                    robotti.Kaskyt[i] = new Kaynnista();
+                    robotti.Kaskyt[i] = new Käynnistä();
                     break;
                 case "sammuta":
                     robotti.Kaskyt[i] = new Sammuta();
                     break;
                 case "ylös":
-                    robotti.Kaskyt[i] = new YlosKasky();
+                    robotti.Kaskyt[i] = new Ylös();
                     break;
                 case "alas":
-                    robotti.Kaskyt[i] = new AlasKasky();
+                    robotti.Kaskyt[i] = new Alas();
                     break;
                 case "vasen":
-                    robotti.Kaskyt[i] = new VasenKasky();
+                    robotti.Kaskyt[i] = new Vasen();
                     break;
                 case "oikea":
-                    robotti.Kaskyt[i] = new OikeaKasky();
+                    robotti.Kaskyt[i] = new Oikea();
                     break;
                 default:
                     Console.WriteLine("virheellinen komento");
