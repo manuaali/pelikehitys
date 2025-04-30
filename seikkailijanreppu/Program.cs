@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,6 +19,36 @@ class Tavara
     {
         return Nimi;
     }
+}
+
+class Nuoli : Tavara
+{
+    public Nuoli() : base("Nuoli", 0, 0.05) { }
+}
+
+class Jousi : Tavara
+{
+    public Jousi() : base("Jousi", 1, 1) { }
+}
+
+class Köysi : Tavara
+{
+    public Köysi() : base("Köysi", 1, 1.5) { }
+}
+
+class Vettä : Tavara
+{
+    public Vettä() : base("Vettä", 2, 2) { }
+}
+
+class RuokaAnnos : Tavara
+{
+    public RuokaAnnos() : base("Ruoka-annos", 1, 0.5) { }
+}
+
+class Miekka : Tavara
+{
+    public Miekka() : base("Miekka", 5, 3) { }
 }
 
 class Reppu
@@ -65,12 +95,12 @@ class Program
     {
         var kaikkiTavarat = new List<Tavara>
         {
-            new Tavara("Nuoli", 0, 0.05),
-            new Tavara("Jousi", 1, 1),
-            new Tavara("Köysi", 1, 1.5),
-            new Tavara("Vettä", 2, 2),
-            new Tavara("Ruoka-annos", 1, 0.5),
-            new Tavara("Miekka", 5, 3)
+            new Nuoli(),
+            new Jousi(),
+            new Köysi(),
+            new Vettä(),
+            new RuokaAnnos(),
+            new Miekka()
         };
 
         var reppu = new Reppu(10, 30, 20);
@@ -94,13 +124,22 @@ class Program
                 syote = kaikkiTavarat[indeksinumero - 1].Nimi;
             }
 
-            var valittuTavara = kaikkiTavarat.Find(t => t.Nimi.Equals(syote, StringComparison.OrdinalIgnoreCase));
+            Tavara valittuTavara = syote.ToLower() switch
+            {
+                "nuoli" => new Nuoli(),
+                "jousi" => new Jousi(),
+                "köysi" => new Köysi(),
+                "vettä" => new Vettä(),
+                "ruoka-annos" => new RuokaAnnos(),
+                "miekka" => new Miekka(),
+                _ => null
+            };
 
             if (valittuTavara != null)
             {
                 if (reppu.Lisaa(valittuTavara))
                 {
-                    Console.WriteLine($"{syote} lisättiin reppuun.");
+                    Console.WriteLine($"{valittuTavara.Nimi} lisättiin reppuun.");
                 }
                 else
                 {
