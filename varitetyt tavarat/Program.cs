@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,20 +23,12 @@ class Tavara
 
 class Nuoli : Tavara
 {
-<<<<<<< Updated upstream
-    public Nuoli() : base("Nuoli", 0, 0.05) { }
-=======
     public Nuoli() : base("Nuoli", 0.1, 0.05) { }
->>>>>>> Stashed changes
 }
 
 class Jousi : Tavara
 {
-<<<<<<< Updated upstream
-    public Jousi() : base("Jousi", 1, 1) { }
-=======
     public Jousi() : base("Jousi", 1, 4) { }
->>>>>>> Stashed changes
 }
 
 class Köysi : Tavara
@@ -59,32 +51,9 @@ class Miekka : Tavara
     public Miekka() : base("Miekka", 5, 3) { }
 }
 
-<<<<<<< Updated upstream
-=======
-class VaritettyTavara<T>
-{
-    public T Tavara { get; }
-    public ConsoleColor Vari { get; }
-
-    public VaritettyTavara(T tavara, ConsoleColor vari)
-    {
-        Tavara = tavara;
-        Vari = vari;
-    }
-
-    public void NaytaTavara()
-    {
-        var vanhaVari = Console.ForegroundColor;
-        Console.ForegroundColor = Vari;
-        Console.WriteLine(Tavara.ToString());
-        Console.ForegroundColor = vanhaVari;
-    }
-}
-
->>>>>>> Stashed changes
 class Reppu
 {
-    private List<VaritettyTavara<Tavara>> tavarat = new List<VaritettyTavara<Tavara>>();
+    private List<Tavara> tavarat = new List<Tavara>();
     private int maxTavaroidenMaara;
     private double maxPaino;
     private double maxTilavuus;
@@ -96,11 +65,11 @@ class Reppu
         this.maxTilavuus = maxTilavuus;
     }
 
-    public bool Lisaa(VaritettyTavara<Tavara> tavara)
+    public bool Lisaa(Tavara tavara)
     {
         if (tavarat.Count >= maxTavaroidenMaara ||
-            LaskePaino() + tavara.Tavara.Paino > maxPaino ||
-            LaskeTilavuus() + tavara.Tavara.Tilavuus > maxTilavuus)
+            LaskePaino() + tavara.Paino > maxPaino ||
+            LaskeTilavuus() + tavara.Tilavuus > maxTilavuus)
         {
             return false;
         }
@@ -109,20 +78,14 @@ class Reppu
         return true;
     }
 
-    public double LaskePaino() => tavarat.Sum(t => t.Tavara.Paino);
-    public double LaskeTilavuus() => tavarat.Sum(t => t.Tavara.Tilavuus);
+    public double LaskePaino() => tavarat.Sum(t => t.Paino);
+    public double LaskeTilavuus() => tavarat.Sum(t => t.Tilavuus);
 
     public override string ToString()
     {
-        if (tavarat.Count == 0)
-            return "Reppu on tyhjä.";
-
-        string sisalto = "Repussa on:\n";
-        foreach (var t in tavarat)
-        {
-            t.NaytaTavara();
-        }
-        return sisalto;
+        return tavarat.Count > 0
+            ? $"Repussa on seuraavat tavarat: {string.Join(", ", tavarat)}"
+            : "Reppu on tyhjä.";
     }
 }
 
@@ -176,24 +139,8 @@ class Program
 
             if (valittuTavara != null)
             {
-                ConsoleColor vari = valittuTavara.Nimi switch
+                if (reppu.Lisaa(valittuTavara))
                 {
-<<<<<<< Updated upstream
-=======
-                    "Nuoli" => ConsoleColor.Cyan,
-                    "Jousi" => ConsoleColor.Green,
-                    "Köysi" => ConsoleColor.Yellow,
-                    "Vettä" => ConsoleColor.Blue,
-                    "Ruoka-annos" => ConsoleColor.Magenta,
-                    "Miekka" => ConsoleColor.Red,
-                    _ => ConsoleColor.White
-                };
-
-                var varitetty = new VaritettyTavara<Tavara>(valittuTavara, vari);
-
-                if (reppu.Lisaa(varitetty))
-                {
->>>>>>> Stashed changes
                     Console.WriteLine($"{valittuTavara.Nimi} lisättiin reppuun.");
                 }
                 else
